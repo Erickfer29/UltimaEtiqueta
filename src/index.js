@@ -6,6 +6,7 @@ import morgan from 'morgan'
 import { join, dirname } from 'path'
 import { fileURLToPath } from 'url'
 import { engine } from 'express-handlebars'
+import productosRoutes from './routes/productos.routes.js'
 
 
 /* ----------------------------- Inicializacion ----------------------------- */
@@ -36,6 +37,8 @@ app.use(express.json());
 app.get('/', (req, res) => {
     res.render('index')
 });
+
+app.use(productosRoutes);
 
 /* ------------------------------ Public files ------------------------------ */
 
