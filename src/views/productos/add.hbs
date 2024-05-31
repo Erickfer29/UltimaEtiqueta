@@ -1,0 +1,55 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h3 class="text-uppercase"> Crear Nuevo Producto</h3>
+                </div>
+                <div class="card-body">
+                    <form action="/add" method="post">
+
+                        <div class="input-group mt-2">
+                            <label for="nombre" class="input-group-text"> Nombre Producto </label>
+                            <input class="form-control" type="text" name="nombre" id="nombre" placeholder="Ejemplo: Camiseta" autofocus required >
+                        </div>
+
+                        <div class="input-group mt-2">
+                            <label for="Descripcion" class="input-group-text"> Descripcion Producto </label>
+                            <input class="form-control" type="text" name="Descripcion" id="Descripcion" placeholder="Ejemplo: Materiales del producto" required >
+                        </div>
+
+                        <div class="input-group mt-2">
+                            <label for="Precio" class="input-group-text"> Precios </label>
+                            <input class="form-control" type="number" name="Precio" id="Precio" placeholder="0" required >
+                        </div>
+
+                        <div class="input-group mt-2">
+                            <label for="CantidadStock" class="input-group-text"> Productos en Stock </label>
+                            <input class="form-control" type="number" name="CantidadStock" id="CantidadStock" placeholder="Numero de productos" required >
+                        </div>
+
+                        <div class="input-group mt-2">
+                            <label for="Talla" class="input-group-text"> Talla </label>
+                            <input class="form-control" type="text" name="Talla" id="Talla" placeholder="Ejemplo: Medida de prenda" required >
+                        </div>
+
+                        <div class="input-group mt-2">
+                            <label for="Color" class="input-group-text"> Color de Prenda </label>
+                            <input class="form-control" type="text" name="Color" id="Color" placeholder="Ejemplo: Color de la prenda" required >
+                        </div>
+
+                        <div class="input-group mt-2">
+                            <label for="Categoria" class="input-group-text"> Categoria </label>
+                            <input class="form-control" type="text" name="Categoria" id="Categoria" placeholder="Ejemplo: Categoria" required >
+                        </div>
+
+                        <div class="form-group mt-4 d-grid gap-2">
+                            <button class="btn btn-success"> Crear </button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

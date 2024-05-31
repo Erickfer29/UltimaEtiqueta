@@ -1,23 +1,18 @@
-/* -------------------------- importar dependencias ------------------------- */
-
-import express from 'express'
-import morgan from 'morgan'
-
-import { join, dirname } from 'path'
-import { fileURLToPath } from 'url'
-import { engine } from 'express-handlebars'
+/* -------------------------- Import ------------------------- */
+import express from 'express';
+import morgan from 'morgan';
+import {join, dirname} from 'path'
+import {fileURLToPath} from 'url'
+import {engine} from 'express-handlebars'
 import productosRoutes from './routes/productos.routes.js'
 
-
-/* ----------------------------- Inicializacion ----------------------------- */
-
+/* ----------------------------- initialization ----------------------------- */
 const app = express();
+/*Evitar colisiones de nombre de variable*/
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 /* --------------------------------- setting -------------------------------- */
-
-app.set('port', process.env.PORT || 3000)
-
+app.set('port', process.env.PORT || 3000 );
 app.set('views', join(__dirname, 'views'));
 app.engine('.hbs', engine({
     defaultLayout: 'main',
@@ -26,14 +21,13 @@ app.engine('.hbs', engine({
     extname: '.hbs'
 }));
 app.set('view engine', '.hbs');
-/* ------------------------------- Middlewares ------------------------------ */
 
+/* ------------------------------- Middlewares ------------------------------ */
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 /* --------------------------------- routes --------------------------------- */
-
 app.get('/', (req, res) => {
     res.render('index')
 });
@@ -41,11 +35,9 @@ app.get('/', (req, res) => {
 app.use(productosRoutes);
 
 /* ------------------------------ Public files ------------------------------ */
-
-app.use(express.static(join(__dirname, 'public')));
+app.use(express.static(join(__dirname, 'public')))
 
 /* ------------------------------- Run server ------------------------------- */
-
 app.listen(app.get('port'), () => {
     console.log('Server listening on port', app.get('port'));
-});
+} );
