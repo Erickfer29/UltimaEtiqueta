@@ -3,7 +3,7 @@ CREATE DATABASE UltimaEtiqueta;
 USE Prueba01;
 
 CREATE TABLE productos(
-    ProductoID INT AUTO_INCREMENT PRIMARY KEY,
+    id_producto INT AUTO_INCREMENT PRIMARY KEY,
     Nombre  VARCHAR(50) NOT NULL,
     Descripcion TEXT,
     Precio FLOAT,

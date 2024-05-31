@@ -13,4 +13,14 @@ router.get('/list', async(req, res) =>{
     }
 });
 
+router.get('/delete/:id_producto', async (req, res) => {
+    try {
+        const { id_producto } = req.params
+        await pool.query('DELETE FROM productos WHERE id_producto = ?', [id_producto]);
+        res.redirect('/list');
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+});
+
 export default router;
