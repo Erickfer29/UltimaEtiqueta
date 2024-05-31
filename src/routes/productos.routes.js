@@ -42,4 +42,31 @@ router.get('/delete/:id_producto', async (req, res) => {
     }
 });
 
+router.get('/edit/:id_producto', async (req, res)=>{
+    try {
+        const {id_producto} = req.params
+        const [producto] = await pool.query('SELECT * FROM productos WHERE id_producto = ?', [id_producto]);
+        const productoEdit = producto[0]
+        res.render('productos/edit', { producto: productoEdit })
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+});
+
+router.post('/edit/:id_producto', async (req, res)=>{
+    try {
+        const {id_producto} = req.params
+        const {nombre, Descripcion, Precio, CantidadStock, Talla, Color, Categoria}  = req.body
+        const editProducto = {
+            nombre, Descripcion, Precio, CantidadStock, Talla, Color, Categoria
+                            }
+
+        await pool.query('UPDATE productos SET ? WHERE id_producto = ?', [editProducto, id_producto]);
+        res.redirect('/list');
+
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+});
+
 export default router;
