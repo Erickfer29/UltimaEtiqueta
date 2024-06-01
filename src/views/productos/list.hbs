@@ -7,6 +7,7 @@
         <table class="table text-center">
             <thead>
                 <tr class="table-dark">
+                    <th scope="col"> Imagen </th>
                     <th scope="col" class="col-4"> Nombre </th>
                     <th scope="col"> Descripcion </th>
                     <th scope="col"> Precio </th>
@@ -21,6 +22,10 @@
 
                 {{#each productos}}
                 <tr>
+                    <td>
+                        <img src="/uploads/{{imagen}}" class="card-img-top mx-auto m-2 rounded-circle"
+                            style="width: 150px; height: 150px;display:block;">
+                    </td>
                     <td> {{nombre}} </td>
                     <td> {{Descripcion}} </td>
                     <td> {{Precio}} </td>
@@ -29,7 +34,7 @@
                     <td> {{Color}} </td>
                     <td> {{Categoria}} </td>
                     <td>
-                        
+
                         <div class="btn-group">
                             <a href="/edit/{{id_producto}}" class="btn btn-warning p-2">
                                 <i class="fa-solid fa-pencil"></i>
