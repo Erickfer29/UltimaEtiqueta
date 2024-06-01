@@ -3,10 +3,20 @@
         <div class="col-md-4 mx-auto">
             <div class="card text-center">
                 <div class="card-header">
-                    <h3 class="text-uppercase"> Crear Nuevo Producto</h3>
+                    <h3 class="text-uppercase"> Editar Nuevo Producto</h3>
                 </div>
                 <div class="card-body">
-                    <form action="/add" method="post">
+                    <form action="/edit/{{producto.id_producto}}" method="post" enctype="multipart/form-data">
+
+                        <div class="input-group mt-2">
+                            <input class="form-control" type="file" name="file" id="file">
+                        </div>
+
+                        {{#if producto.imagen}}
+                            <div class="input-group mt-2">
+                                <img src="/uploads/{{producto.imagen}}" class="card-img-top mx-auto m-2 rounded-circle" style="width: 150px; height: 150px;display:block;">
+                            </div>
+                        {{/if}}
 
                         <div class="input-group mt-2">
                             <label for="nombre" class="input-group-text"> Nombre Producto </label>

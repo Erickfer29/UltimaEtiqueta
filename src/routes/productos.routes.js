@@ -73,14 +73,19 @@ router.get('/edit/:id_producto', async (req, res)=>{
     }
 });
 
-router.post('/edit/:id_producto', async (req, res)=>{
+router.post('/edit/:id_producto', upload.single('file'), async (req, res)=>{
     try {
         const {id_producto} = req.params
         const {nombre, Descripcion, Precio, CantidadStock, Talla, Color, Categoria}  = req.body
-        const editProducto = {
-            nombre, Descripcion, Precio, CantidadStock, Talla, Color, Categoria
-                            }
-
+        let editProducto = {}
+        if(req.file){
+            const file = req.file
+            const imagen_original = file.originalname
+            const imagen = file.filename
+            editProducto = {imagen, nombre, Descripcion, Precio, CantidadStock, Talla, Color, Categoria}
+        }else{
+            editProducto = {nombre, Descripcion, Precio, CantidadStock, Talla, Color, Categoria}
+        }
         await pool.query('UPDATE productos SET ? WHERE id_producto = ?', [editProducto, id_producto]);
         res.redirect('/list');
 
