@@ -6,6 +6,7 @@ import {fileURLToPath} from 'url'
 import {engine} from 'express-handlebars'
 import productosRoutes from './routes/productos.routes.js'
 import aboutusRoutes from './routes/aboutus.routes.js'
+import suscripRoutes from './routes/suscrip.routes.js'
 
 /* ----------------------------- initialization ----------------------------- */
 const app = express();
@@ -35,6 +36,7 @@ app.get('/', (req, res) => {
 
 app.use(productosRoutes);
 app.use(aboutusRoutes);
+app.use(suscripRoutes);
 
 /* ------------------------------ Public files ------------------------------ */
 app.use(express.static(join(__dirname, 'public')))
