@@ -5,6 +5,7 @@ import {join, dirname} from 'path'
 import {fileURLToPath} from 'url'
 import {engine} from 'express-handlebars'
 import productosRoutes from './routes/productos.routes.js'
+import aboutusRoutes from './routes/aboutus.routes.js'
 
 /* ----------------------------- initialization ----------------------------- */
 const app = express();
@@ -33,6 +34,7 @@ app.get('/', (req, res) => {
 });
 
 app.use(productosRoutes);
+app.use(aboutusRoutes);
 
 /* ------------------------------ Public files ------------------------------ */
 app.use(express.static(join(__dirname, 'public')))

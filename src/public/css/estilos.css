@@ -1,0 +1,182 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container {
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 2%;
+}
+
+h1,
+h2 {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.section-flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.character {
+    width: 25%;
+    margin: 3%;
+    border: 2px rgb(66, 66, 194) solid;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.character img {
+    width: 80%;
+    border-radius: 3%;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    height: 80%;
+    text-align: center;
+    padding: 2%;
+}
+
+.info-character {
+    text-align: justify;
+    margin: 2%;
+}
+
+h2 {
+    font-weight: bold;
+}
+
+.menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu__logo img {
+    width: 150px; /* Ajuste el tamaño del logo según sea necesario */
+    height: auto;
+}
+
+.menu__item {
+    display: inline-block;
+    margin-right: 0px; /* Espacio entre elementos del menú */
+}
+
+.carousel {
+    margin-top: 20px; /* Espacio entre el menú y el carrusel */
+}
+
+/* Estilos para el formulario de contacto */
+.form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 20px; /* Ajuste del espacio entre el carrusel y el formulario */
+}
+
+.form__title {
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.form__group {
+    margin-bottom: 20px;
+}
+
+.form__label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form__input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form__button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form__button:hover {
+    background-color: #0056b3;
+}
+
+/* Ajuste del tamaño de las imágenes del carrusel */
+.carousel-item img {
+    max-width: auto;
+    max-height: 500px;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Estilo para las imágenes de los jugadores */
+.player-image {
+    cursor: pointer; /* Cambiar el cursor a una mano al pasar sobre la imagen */
+    transition: transform 0.2s; /* Agregar una transición suave */
+}
+
+/* Estilo cuando la imagen está enfocada */
+.player-image:focus {
+    outline: none; /* Eliminar el contorno predeterminado al enfocar */
+    border: 2px solid #007bff; /* Agregar un borde azul alrededor de la imagen */
+}
+
+/* Estilo cuando la imagen está activa (haciendo clic) */
+.player-image:active {
+    transform: scale(0.95); /* Reducir ligeramente el tamaño de la imagen cuando se hace clic */
+}
+
+@media (max-width: 768px) {
+    .character {
+        width: 100%;
+    }
+}
+
+/* Consulta de medios para pantallas más pequeñas que 425px (dispositivos móviles) */
+@media (max-width: 425px) {
+    .container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .menu__logo {
+        display: block;
+        text-align: center;
+        padding-bottom: 10px;
+    }
+
+    .menu__item {
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 10px;
+    }
+
+    .menu__item a {
+        display: block;
+        text-align: center;
+    }
+}
+
